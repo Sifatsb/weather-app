@@ -18,21 +18,21 @@ function App() {
         setLong(position.coords.longitude);
       });
 
-      await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=d72f772de399bdc42b55c938a604a0bf`)
-        .then(res => res.json())
-        .then(result => {
-          setData(result)
-          console.log(result);
-        });
+      // await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=d72f772de399bdc42b55c938a604a0bf`)
+      //   .then(res => res.json())
+      //   .then(result => {
+      //     setData(result)
+      //     console.log(result);
+      //   });
 
 
 
-      // await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
-      // .then(res => res.json())
-      // .then(result => {
-      //   setData(result)
-      //   console.log(result);
-      // });
+      await fetch(`${process.env.REACT_APP_API_URL}/weather/?lat=${lat}&lon=${long}&units=metric&APPID=${process.env.REACT_APP_API_KEY}`)
+      .then(res => res.json())
+      .then(result => {
+        setData(result)
+        console.log(result);
+      });
 
 
     }
